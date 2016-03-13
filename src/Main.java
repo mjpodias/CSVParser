@@ -1,7 +1,6 @@
 import java.io.*;
 import com.opencsv.*;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
@@ -21,7 +20,7 @@ public class Main {
 				}
 				binnumber=1;
 			}
-			
+						
 			if (hm.containsKey(binKey)){
 				switch (nextLine[2]) {
 					case "Center in Cage": 
@@ -52,46 +51,45 @@ public class Main {
 						}
 						binnumber=1;
 						break;
-					case "Social Contact <0.050":  
+					case "Social Contact < 0.050":  
 						for (binnumber=1; binnumber <= 120; binnumber++){
 							binKey = nextLine[0] + nextLine[1] + String.valueOf(binnumber);
 							hm.get(binKey).setFiveContactDur(nextLine[binnumber+2]);
 						}
 						binnumber=1;
 						break;
-					case "Social Contact <0.070":  
+					case "Social Contact < 0.070":  
 						for (binnumber=1; binnumber <= 120; binnumber++){
 							binKey = nextLine[0] + nextLine[1] + String.valueOf(binnumber);
 							hm.get(binKey).setSevenContactDur(nextLine[binnumber+2]);
 						}
 						binnumber=1;
 						break;
-					case "Social Contact <0.100":  
+					case "Social Contact < 0.100":  
 						for (binnumber=1; binnumber <= 120; binnumber++){
 							binKey = nextLine[0] + nextLine[1] + String.valueOf(binnumber);
 							hm.get(binKey).setOneContactDur(nextLine[binnumber+2]);
 						}
 						binnumber=1;
 						break;
-					case "Social Contact <0.200":  
+					case "Social Contact < 0.200":  
 						for (binnumber=1; binnumber <= 120; binnumber++){
 							binKey = nextLine[0] + nextLine[1] + String.valueOf(binnumber);
 							hm.get(binKey).setTwoContactDur(nextLine[binnumber+2]);
 						}
 						binnumber=1;
 						break;
-					case "Social Contact <0.400":  
+					case "Social Contact < 0.400":  
 						for (binnumber=1; binnumber <= 120; binnumber++){
 							binKey = nextLine[0] + nextLine[1] + String.valueOf(binnumber);
 							hm.get(binKey).setFourContactDur(nextLine[binnumber+2]);
 						}
 						binnumber=1;
 						break;
-					case "Social Contact <0.600":  
+					case "Social Contact < 0.600":  
 						for (binnumber=1; binnumber <= 120; binnumber++){
 							binKey = nextLine[0] + nextLine[1] + String.valueOf(binnumber);
 							hm.get(binKey).setSixContactDur(nextLine[binnumber+2]);
-							System.out.println("Something is working");
 						}
 						binnumber=1;
 						break;
@@ -145,10 +143,10 @@ public class Main {
 		
 		int counter = 1;
 		
-//		for (String binKey : hm.keySet()) {
-//		    System.out.println(binKey + " | " + hm.get(binKey).getSixContactDur() + ":::enter number " + counter);
-//		    counter++;
-//		}
+		for (String binKey : hm.keySet()) {
+		    System.out.println(binKey + " | " + hm.get(binKey).getSixContactDur() + " | Entry number: " + counter);
+		    counter++;
+		}
 		reader.close();
 		
 	}
