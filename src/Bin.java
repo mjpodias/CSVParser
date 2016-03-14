@@ -141,6 +141,7 @@ public class Bin {
 	
 	public String toString() {
 		return this.binNumber + ",#" + 
+			   this.trialNumber + ",#" + 
 			   this.actorID + ",#" + 
 			   this.centerDur + ",#" + 
 			   this.stayHideDur + ",#" + 

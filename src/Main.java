@@ -136,21 +136,26 @@ public class Main {
 						}
 						binnumber=1;
 						break;
-					default: 
+					default:
 						break;
 				}
 			}
 	    }
-				
+		
+		
+		// I can't figure out why this section of code is not ignoring the 'entries' that contain null data.
+		// I know the null value is being converted to a string but my condition statement is still not detecting anything.
+		int counter = 1;		
 		for (String binKey : hm.keySet()) {
 		    String[] entries = hm.get(binKey).toString().split("#");
-		    
-		    if (entries[1]!="','"){
+		    if (entries[3]!="null,"){
+		    	System.out.println(counter);
+		    	System.out.println(entries[3]);
 		    	writer.writeNext(entries);
-		    }
+		    	counter++;
+		    }	    
 		}
 		reader.close();
 		writer.close();
-		System.out.println("Done");
 	}
 }
