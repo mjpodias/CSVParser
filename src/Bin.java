@@ -138,4 +138,25 @@ public class Bin {
 	public void setCompeteDur(String competeDur) {
 		this.competeDur = competeDur;
 	}
+	
+	public String toString() {
+		return this.binNumber + ",#" + 
+			   this.actorID + ",#" + 
+			   this.centerDur + ",#" + 
+			   this.stayHideDur + ",#" + 
+			   this.socialContactDur + ",#" +
+			   this.threeContactDur + ",#" + 
+			   this.fiveContactDur + ",#" + 
+			   this.sevenContactDur + ",#" + 
+			   this.oneContactDur + ",#" + 
+			   this.twoContactDur + ",#" + 
+			   this.fourContactDur + ",#" + 
+			   this.sixContactDur + ",#" + 
+			   this.approachDur + ",#" + 
+			   this.leaveDur + ",#" + 
+			   this.followDur + ",#" + 
+			   this.sniffDur + ",#" + 
+			   this.mountDur + ",#" + 
+			   this.competeDur;
+	}
 }

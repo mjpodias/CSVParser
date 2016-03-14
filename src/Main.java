@@ -5,6 +5,7 @@ import java.util.HashMap;
 public class Main {
 	public static void main(String[] args) throws IOException {
 		CSVReader reader = new CSVReader(new FileReader("Bin.csv"));
+		CSVWriter writer = new CSVWriter(new FileWriter("newBin.csv"), '\t');
 		String [] nextLine;
 		int binnumber = 1;
 		HashMap<String, Bin> hm = new HashMap<String, Bin>();
@@ -138,16 +139,18 @@ public class Main {
 					default: 
 						break;
 				}
-			}	
+			}
 	    }
-		
-		int counter = 1;
-		
+				
 		for (String binKey : hm.keySet()) {
-		    System.out.println(binKey + " | " + hm.get(binKey).getSixContactDur() + " | Entry number: " + counter);
-		    counter++;
+		    String[] entries = hm.get(binKey).toString().split("#");
+		    
+		    if (entries[1]!="','"){
+		    	writer.writeNext(entries);
+		    }
 		}
 		reader.close();
-		
+		writer.close();
+		System.out.println("Done");
 	}
 }
