@@ -140,24 +140,24 @@ public class Bin {
 	}
 	
 	public String toString() {
-		return this.binNumber + ",#" + 
-			   this.trialNumber + ",#" + 
-			   this.actorID + ",#" + 
-			   this.centerDur + ",#" + 
-			   this.stayHideDur + ",#" + 
-			   this.socialContactDur + ",#" +
-			   this.threeContactDur + ",#" + 
-			   this.fiveContactDur + ",#" + 
-			   this.sevenContactDur + ",#" + 
-			   this.oneContactDur + ",#" + 
-			   this.twoContactDur + ",#" + 
-			   this.fourContactDur + ",#" + 
-			   this.sixContactDur + ",#" + 
-			   this.approachDur + ",#" + 
-			   this.leaveDur + ",#" + 
-			   this.followDur + ",#" + 
-			   this.sniffDur + ",#" + 
-			   this.mountDur + ",#" + 
+		return this.binNumber + "#" + 
+			   this.trialNumber + "#" + 
+			   this.actorID + "#" + 
+			   this.centerDur + "#" + 
+			   this.stayHideDur + "#" + 
+			   this.socialContactDur + "#" +
+			   this.threeContactDur + "#" + 
+			   this.fiveContactDur + "#" + 
+			   this.sevenContactDur + "#" + 
+			   this.oneContactDur + "#" + 
+			   this.twoContactDur + "#" + 
+			   this.fourContactDur + "#" + 
+			   this.sixContactDur + "#" + 
+			   this.approachDur + "#" + 
+			   this.leaveDur + "#" + 
+			   this.followDur + "#" + 
+			   this.sniffDur + "#" + 
+			   this.mountDur + "#" + 
 			   this.competeDur;
 	}
 }

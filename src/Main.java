@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Main {
 	public static void main(String[] args) throws IOException {
 		CSVReader reader = new CSVReader(new FileReader("Bin.csv"));
-		CSVWriter writer = new CSVWriter(new FileWriter("newBin.csv"), '\t');
+		CSVWriter writer = new CSVWriter(new FileWriter("newBin.csv"));
 		String [] nextLine;
 		int binnumber = 1;
 		HashMap<String, Bin> hm = new HashMap<String, Bin>();
@@ -31,7 +31,7 @@ public class Main {
 						}
 						binnumber=1;
 						break;
-					case "Stay/Hide in Cage": 
+					case "Stay/Hide In Cage": 
 						for (binnumber=1; binnumber <= 120; binnumber++){
 							binKey = nextLine[0] + nextLine[1] + String.valueOf(binnumber);
 							hm.get(binKey).setStayHideDur(nextLine[binnumber+2]);
@@ -142,20 +142,12 @@ public class Main {
 			}
 	    }
 		
-		
-		// I can't figure out why this section of code is not ignoring the 'entries' that contain null data.
-		// I know the null value is being converted to a string but my condition statement is still not detecting anything.
-		int counter = 1;		
 		for (String binKey : hm.keySet()) {
-		    String[] entries = hm.get(binKey).toString().split("#");
-		    if (entries[3]!="null,"){
-		    	System.out.println(counter);
-		    	System.out.println(entries[3]);
-		    	writer.writeNext(entries);
-		    	counter++;
-		    }	    
+		    String[] entries = hm.get(binKey).toString().split("#");		    
+		    writer.writeNext(entries);
 		}
 		reader.close();
 		writer.close();
+		System.out.println("Jobs done.");
 	}
 }
